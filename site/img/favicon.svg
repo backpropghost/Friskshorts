@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <title>Friskshorts</title>
+  <defs>
+    <linearGradient id="fs-tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#31323D"/>
+      <stop offset="1" stop-color="#08080D"/>
+    </linearGradient>
+    <linearGradient id="fs-yellow" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFEF48"/>
+      <stop offset="1" stop-color="#FFDF07"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#fs-tile)" d="M76 0h104c56 0 76 20 76 76v104c0 56-20 76-76 76H76c-56 0-76-20-76-76V76C0 20 20 0 76 0z"/>
+  <g transform="skewX(-9.46)">
+    <rect x="84" y="39" width="47" height="179" rx="10" fill="url(#fs-yellow)"/>
+    <rect x="140" y="39" width="79" height="48" rx="10" fill="url(#fs-yellow)"/>
+    <rect x="141" y="94" width="55" height="48" rx="10" fill="#64FF47"/>
+  </g>
+</svg>

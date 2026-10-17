@@ -1,0 +1,23 @@
+<!doctype html>
+<!-- Source for img/og.png (1200 x 630). Render: tools/og/render.sh (headless Chromium screenshot). Not deployed. -->
+<html><head><meta charset="utf-8"><style>
+@font-face { font-family: Archivo; src: url("../../fonts/archivo.woff2") format("woff2"); font-weight: 700 900; font-stretch: 100% 112%; }
+html, body { margin: 0; width: 1200px; height: 630px; background: #17181F; overflow: hidden; }
+.cap { position: absolute; left: 80px; top: 150px; margin: 0; font: 900 92px/.9 Archivo; font-stretch: 100%; text-transform: uppercase;
+  letter-spacing: -.01em; color: #FFFF00; -webkit-text-stroke: .14em #000; paint-order: stroke fill; }
+.cap span { display: block; }
+.shot { position: absolute; right: 96px; top: 48px; width: 300px; height: 533px; border-radius: 20px; overflow: hidden; outline: 1px solid #2E303A; }
+.shot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.crop { position: absolute; width: 14px; height: 14px; border: 0 solid #A3A5B0; }
+.tl { right: calc(96px + 300px + 10px - 14px); top: 38px; border-left-width: 1.5px; border-top-width: 1.5px; }
+.tr { right: 86px; top: 38px; border-right-width: 1.5px; border-top-width: 1.5px; }
+.bl { right: calc(96px + 300px + 10px - 14px); top: calc(48px + 533px + 10px - 14px); border-left-width: 1.5px; border-bottom-width: 1.5px; }
+.br { right: 86px; top: calc(48px + 533px + 10px - 14px); border-right-width: 1.5px; border-bottom-width: 1.5px; }
+.brand { position: absolute; left: 80px; bottom: 64px; display: flex; align-items: center; gap: 16px; font: 800 34px/1 Archivo; font-stretch: 112%; color: #EEEEF2; }
+.brand img { width: 56px; height: 56px; }
+</style></head><body>
+<p class="cap"><span>Type a topic.</span><span>Get a Short.</span></p>
+<div class="shot"><img src="../../media/og/still.png" alt=""></div>
+<i class="crop tl"></i><i class="crop tr"></i><i class="crop bl"></i><i class="crop br"></i>
+<div class="brand"><img src="../../img/logo.svg" alt="">Friskshorts</div>
+</body></html>

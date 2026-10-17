@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://backpropghost.github.io/Friskshorts/sitemap.xml
