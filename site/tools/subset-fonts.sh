@@ -13,3 +13,6 @@ uvx --from 'fonttools[woff]' pyftsubset "$tmp/atk-cut.ttf" --unicodes="$U" --lay
 ls -la fonts/*.woff2
 # Fallback metrics in css/site.css (size-adjust, ascent/descent-override) were computed from the
 # instanced files against Arial Black (Archivo 900) and Verdana (Atkinson 400). Recompute if the cut changes.
+# Numerals for body text (Atkinson Next only has a slashed zero): Archivo 400-700, wdth 100, digits only.
+uvx --from 'fonttools[woff]' fonttools varLib.instancer "$tmp/archivo.ttf" wght=400:700 wdth=100 -o "$tmp/archivo-dig.ttf"
+uvx --from 'fonttools[woff]' pyftsubset "$tmp/archivo-dig.ttf" --unicodes='U+0030-0039' --layout-features='kern,tnum' --flavor=woff2 --output-file=fonts/archivo-digits.woff2

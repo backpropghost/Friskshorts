@@ -86,14 +86,21 @@ async function initDownloads(p) {
     const ol = $("[data-other-link]", get); ol.href = REL.mac; ol.textContent = "Download for Mac";
     $("[data-other-size]", get).textContent = `${REL.macSize}.`;
   } else if (p === "mac-intel") {
-    const intel = "This Mac looks like it has an Intel chip. Friskshorts needs Apple Silicon (M1 or newer) for now.";
-    $$("[data-dl-primary]").forEach((a) => a.classList.add("is-secondary"));
-    $("[data-dl-note]", hero).textContent = intel;
-    const alt = $("[data-dl-alt]", hero); alt.textContent = "Download for Windows"; alt.href = REL.win;
-    $("[data-dl-line]", get).textContent = intel;
+    // Chrome on an Intel Mac reports architecture "x86". Never offer the arm64 build as if it works.
+    const need = "Friskshorts needs a Mac with Apple Silicon (M1 or newer). There’s no Intel version yet.";
+    const ask = "https://github.com/backpropghost/Friskshorts/issues";
+    navLabel.textContent = "Download";
+    for (const block of [hero, get]) {
+      const a = $("[data-dl-primary]", block);
+      a.className = "dl-anyway"; a.innerHTML = "<span data-dl-label>I have Apple Silicon, download anyway</span>";
+    }
+    $("[data-dl-note]", hero).textContent = need;
+    $("[data-dl-alt]", hero).parentElement.innerHTML = `<a href="${REL.win}">Download for Windows</a> (${REL.winSize}) or <a href="${ask}">ask for an Intel version</a>`;
+    $("[data-dl-line]", get).textContent = need;
+    $("[data-dl-other]", get).innerHTML = `<p>Windows 10 or 11, 64-bit.</p><p><a class="u" href="${REL.win}">Download for Windows</a> ${REL.winSize}.</p><p><a class="u" href="${ask}">Ask for an Intel version</a></p>`;
   } else if (p === "linux" || p === "mobile") {
     navLabel.textContent = "Download";
-    const note = p === "linux" ? "Friskshorts runs on macOS and Windows. There's no Linux version yet." : "Friskshorts is a desktop app for Mac and Windows.";
+    const note = p === "linux" ? "Friskshorts runs on macOS and Windows. There’s no Linux version yet." : "Friskshorts is a desktop app for Mac and Windows.";
     for (const block of [hero, get]) {
       const a = $("[data-dl-primary]", block);
       if (p === "linux") a.hidden = true; else makeShareButton(a);
@@ -319,8 +326,8 @@ function initStage() {
   let typeRun = 0;
   async function enterTopic() {
     const run = ++typeRun;
-    if (RM) { typed.textContent = fullTopic; ideas.style.opacity = 1; return; }
-    typed.textContent = ""; ideas.style.opacity = 0;
+    if (RM) { typed.textContent = fullTopic; ideas.classList.add("is-lit"); return; }
+    typed.textContent = ""; ideas.classList.remove("is-lit");
     await wait(160);
     for (let i = 1; i <= fullTopic.length; i++) {
       if (run !== typeRun) return;
@@ -329,7 +336,7 @@ function initStage() {
     }
     await wait(200);
     if (run !== typeRun) return;
-    ideas.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 160, fill: "forwards" }).finished.then(() => { ideas.style.opacity = 1; });
+    ideas.classList.add("is-lit");
   }
 
   /* ---- Step 2: Stream ---- */
@@ -375,8 +382,8 @@ function initStage() {
   const pic = $(".pic", stage);
   function enterScene(prev) {
     if (RM || prev === "s5") return;
-    bg.animate([{ transform: "translateY(100%)" }, { transform: "translateY(0)" }], { duration: 560, easing: "cubic-bezier(.16, 1, .3, 1)" });
-    pic.animate([{ transform: "translateY(-12px)", opacity: 0 }, { transform: "none", opacity: 1 }], { duration: 320, delay: 300 + 560 * 0.5, easing: "cubic-bezier(.16, 1, .3, 1)", fill: "backwards" });
+    bg.animate([{ transform: "translateY(16%)", opacity: 0 }, { transform: "translateY(0)", opacity: 1 }], { duration: 420, easing: "cubic-bezier(.16, 1, .3, 1)" });
+    pic.animate([{ transform: "translateY(-12px)", opacity: 0 }, { transform: "none", opacity: 1 }], { duration: 320, delay: 140, easing: "cubic-bezier(.16, 1, .3, 1)", fill: "backwards" });
   }
   $$("#bg-pick input").forEach((r) => r.addEventListener("change", () => { scene.dataset.sel = r.value; syncMedia(); }));
 
@@ -485,30 +492,44 @@ function initStage() {
     } else applyFrame(next, prev);
   }
 
-  /* ---- Scroll: active step + scroll-linked playhead ---- */
+  /* ---- Scroll: active step + scroll-linked playhead ----
+     With JS the six steps sit in one pinned panel (CSS .js .steps). Scrolling through the Run's extra
+     height (6 x --step-len) picks the step, so the text shown always matches the frame. */
   let ticking = false;
+  const run = $(".run");
+  const runHead = $(".run-head");
+  const list = $(".steps");
+  function geometry() {
+    const r = run.getBoundingClientRect();
+    const headH = runHead.offsetHeight;
+    const mb = parseFloat(getComputedStyle(list).marginBottom) || 0;
+    const travel = Math.max(1, r.height - headH - list.offsetHeight - mb - (parseFloat(getComputedStyle(run).paddingTop) || 0));
+    const pin = parseFloat(getComputedStyle(list).top) || 0;
+    return { r, headH, travel, pin, padTop: parseFloat(getComputedStyle(run).paddingTop) || 0 };
+  }
   function measure() {
     ticking = false;
     const vh = innerHeight;
-    const small = smallQ.matches;
-    const bandH = small ? band.getBoundingClientRect().height : 0;
-    const line = small ? bandH + (vh - bandH) * 0.32 : vh * 0.58;
-    const anchors = steps.map((s) => {
-      const r = s.getBoundingClientRect();
-      return small ? r.top + 40 : r.top + r.height / 2;
-    });
-    let i = -1;
-    anchors.forEach((a, k) => { if (a <= line) i = k; });
-    if (i < 0) { setState("hero"); ruler.style.setProperty("--p", 1); return; }
+    const g = geometry();
+    const naturalTop = g.r.top + g.padTop + g.headH;
+    const d = g.pin - naturalTop;              // px scrolled past the pin point
+    const lead = smallQ.matches ? (vh - g.pin) * 0.6 : vh * 0.35;
+    if (d < -lead) { setState("hero"); ruler.style.setProperty("--p", 1); return; }
+    const p = clamp(d / g.travel, 0, 0.9999);
+    const i = Math.min(5, Math.floor(p * 6));
     setState("s" + (i + 1));
-    let f;
-    if (RM) f = 0.5;
-    else {
-      const next = i < anchors.length - 1 ? anchors[i + 1] : anchors[i] + steps[i].getBoundingClientRect().height * (small ? 1 : 0.5);
-      f = clamp((line - anchors[i]) / Math.max(1, next - anchors[i]));
-    }
+    const f = RM ? 0.5 : p * 6 - i;
     ruler.style.setProperty("--p", ((i + f) / 6).toFixed(4));
   }
+  // Keyboard: focusing a control in a step that is not showing scrolls to that step.
+  list.addEventListener("focusin", (e) => {
+    const st = e.target.closest(".step");
+    const k = steps.indexOf(st);
+    if (k < 0 || st.classList.contains("is-active")) return;
+    const g = geometry();
+    const d = g.pin - (g.r.top + g.padTop + g.headH);
+    scrollTo({ top: scrollY + ((k + 0.5) / 6) * g.travel - d, behavior: "instant" });
+  });
   const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(measure); } };
   addEventListener("scroll", onScroll, { passive: true });
   addEventListener("resize", onScroll, { passive: true });
@@ -556,11 +577,10 @@ function initTabs(p) {
       const on = t === tab;
       t.setAttribute("aria-selected", String(on));
       t.tabIndex = on ? 0 : -1;
-      $("#" + t.getAttribute("aria-controls")).hidden = !on;
+      $("#" + t.getAttribute("aria-controls")).classList.toggle("is-on", on);
     });
     if (focus) tab.focus();
   };
-  list.hidden = false;
   tabs.forEach((t, i) => {
     t.addEventListener("click", () => select(t));
     t.addEventListener("keydown", (e) => {
