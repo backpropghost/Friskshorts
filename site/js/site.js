@@ -201,7 +201,11 @@ function tryPlay(v, onFail) {
       const oldest = [...playing].find((x) => x !== v);
       oldest?.pause(); playing.delete(oldest);
     }
-  }).catch(() => onFail?.());
+  }).catch((err) => {
+    // play() also rejects when a quick scroll pauses the video before it starts
+    // (AbortError); only a blocked autoplay should switch to the paused state.
+    if (err?.name === "NotAllowedError") onFail?.();
+  });
 }
 function stopVideo(v) { v.pause(); playing.delete(v); }
 
