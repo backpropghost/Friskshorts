@@ -848,3 +848,11 @@
 @layer components {
   .dl-anyway { color: inherit; font-size: var(--fs-small); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; padding-block: 10px; }
 }
+@layer components {
+  .cr-sec { margin-top: 48px; }
+  .cr-h { font: 700 var(--fs-h3)/1.15 var(--f-cap); font-stretch: 106%; margin-bottom: 8px; }
+  .cr-sec .cr-list { margin-top: 12px; }
+  .cr-time { color: var(--muted); font-size: var(--fs-small); margin-left: 6px; white-space: nowrap; }
+  .cr-what { overflow-wrap: anywhere; }
+  .cr-sec .cr-note { margin-top: 12px; }
+}

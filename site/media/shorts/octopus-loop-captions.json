@@ -1,0 +1,271 @@
+{
+ "short": "octopus",
+ "topic": "Why an octopus has three hearts",
+ "loop_start_in_short": 0.1,
+ "loop_duration": 8.777,
+ "caption_color": "#FFFF00",
+ "highlight_color": "#64FF47",
+ "note": "times in seconds from the loop start; a group is one on-screen caption line, the current word is drawn in highlight_color",
+ "groups": [
+  {
+   "start": 0,
+   "end": 0.63,
+   "words": [
+    {
+     "text": "An",
+     "start": 0,
+     "end": 0.067
+    },
+    {
+     "text": "octopus",
+     "start": 0.067,
+     "end": 0.44
+    },
+    {
+     "text": "has",
+     "start": 0.44,
+     "end": 0.63
+    }
+   ]
+  },
+  {
+   "start": 0.63,
+   "end": 1.398,
+   "words": [
+    {
+     "text": "three",
+     "start": 0.63,
+     "end": 0.904
+    },
+    {
+     "text": "hearts,",
+     "start": 0.904,
+     "end": 1.398
+    }
+   ]
+  },
+  {
+   "start": 1.398,
+   "end": 2.088,
+   "words": [
+    {
+     "text": "and",
+     "start": 1.398,
+     "end": 1.522
+    },
+    {
+     "text": "its",
+     "start": 1.522,
+     "end": 1.677
+    },
+    {
+     "text": "blood",
+     "start": 1.677,
+     "end": 1.942
+    },
+    {
+     "text": "is",
+     "start": 1.942,
+     "end": 2.088
+    }
+   ]
+  },
+  {
+   "start": 2.088,
+   "end": 2.834,
+   "words": [
+    {
+     "text": "blue.",
+     "start": 2.088,
+     "end": 2.834
+    }
+   ]
+  },
+  {
+   "start": 2.834,
+   "end": 3.227,
+   "words": [
+    {
+     "text": "Two",
+     "start": 2.834,
+     "end": 2.965
+    },
+    {
+     "text": "hearts",
+     "start": 2.965,
+     "end": 3.227
+    }
+   ]
+  },
+  {
+   "start": 3.227,
+   "end": 3.674,
+   "words": [
+    {
+     "text": "pump",
+     "start": 3.227,
+     "end": 3.424
+    },
+    {
+     "text": "blood",
+     "start": 3.424,
+     "end": 3.674
+    }
+   ]
+  },
+  {
+   "start": 3.674,
+   "end": 4.236,
+   "words": [
+    {
+     "text": "through",
+     "start": 3.674,
+     "end": 3.926
+    },
+    {
+     "text": "the",
+     "start": 3.926,
+     "end": 4.236
+    }
+   ]
+  },
+  {
+   "start": 4.236,
+   "end": 4.998,
+   "words": [
+    {
+     "text": "gills,",
+     "start": 4.236,
+     "end": 4.66
+    },
+    {
+     "text": "and",
+     "start": 4.66,
+     "end": 4.827
+    },
+    {
+     "text": "the",
+     "start": 4.827,
+     "end": 4.998
+    }
+   ]
+  },
+  {
+   "start": 4.998,
+   "end": 5.562,
+   "words": [
+    {
+     "text": "third",
+     "start": 4.998,
+     "end": 5.271
+    },
+    {
+     "text": "pushes",
+     "start": 5.271,
+     "end": 5.499
+    },
+    {
+     "text": "it",
+     "start": 5.499,
+     "end": 5.562
+    }
+   ]
+  },
+  {
+   "start": 5.562,
+   "end": 6.48,
+   "words": [
+    {
+     "text": "around",
+     "start": 5.562,
+     "end": 6.058
+    },
+    {
+     "text": "the",
+     "start": 6.058,
+     "end": 6.48
+    }
+   ]
+  },
+  {
+   "start": 6.48,
+   "end": 6.712,
+   "words": [
+    {
+     "text": "body.",
+     "start": 6.48,
+     "end": 6.712
+    }
+   ]
+  },
+  {
+   "start": 6.712,
+   "end": 7.305,
+   "words": [
+    {
+     "text": "The",
+     "start": 6.712,
+     "end": 6.85
+    },
+    {
+     "text": "blue",
+     "start": 6.85,
+     "end": 7.019
+    },
+    {
+     "text": "comes",
+     "start": 7.019,
+     "end": 7.305
+    }
+   ]
+  },
+  {
+   "start": 7.305,
+   "end": 8.036,
+   "words": [
+    {
+     "text": "from",
+     "start": 7.305,
+     "end": 7.71
+    },
+    {
+     "text": "copper,",
+     "start": 7.71,
+     "end": 8.036
+    }
+   ]
+  },
+  {
+   "start": 8.036,
+   "end": 8.661,
+   "words": [
+    {
+     "text": "which",
+     "start": 8.036,
+     "end": 8.324
+    },
+    {
+     "text": "carries",
+     "start": 8.324,
+     "end": 8.661
+    }
+   ]
+  },
+  {
+   "start": 8.661,
+   "end": 8.777,
+   "words": [
+    {
+     "text": "oxygen",
+     "start": 8.661,
+     "end": 8.777
+    },
+    {
+     "text": "better",
+     "start": 8.777,
+     "end": 8.777
+    }
+   ]
+  }
+ ]
+}

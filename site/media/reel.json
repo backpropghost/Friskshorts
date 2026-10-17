@@ -1,0 +1,182 @@
+[
+ {
+  "picked": "Minecraft parkour with pictures from the web.",
+  "voice_name": "Heart, American English",
+  "loop_window_s": [
+   0.1,
+   8.88
+  ],
+  "id": "octopus",
+  "topic": "Why an octopus has three hearts",
+  "title": "An Octopus Has Three Hearts",
+  "duration_s": 18.004,
+  "output": {
+   "folder": "An_Octopus_Has_Three_Hearts",
+   "files": [
+    "video.mp4",
+    "details.txt",
+    "info.json"
+   ]
+  },
+  "voice": "kokoro:af_heart",
+  "background": "minecraft",
+  "visuals": "images",
+  "music": "epic_battle",
+  "speed": 1.2,
+  "caption_color": "#FFFF00",
+  "highlight_color": "#64FF47",
+  "files": {
+   "loop-720.webm": "shorts/octopus-loop-720.webm",
+   "loop-720.mp4": "shorts/octopus-loop-720.mp4",
+   "loop-540.mp4": "shorts/octopus-loop-540.mp4",
+   "full-720.mp4": "shorts/octopus-full-720.mp4",
+   "poster.avif": "shorts/octopus-poster.avif",
+   "poster.jpg": "shorts/octopus-poster.jpg",
+   "loop-captions.json": "shorts/octopus-loop-captions.json"
+  }
+ },
+ {
+  "picked": "ASMR with pictures from the web.",
+  "voice_name": "Michael, American English",
+  "loop_window_s": [
+   0.1,
+   7.84
+  ],
+  "id": "lightning",
+  "topic": "Lightning is hotter than the Sun",
+  "title": "Lightning Is Hotter Than The Sun",
+  "duration_s": 21.158,
+  "output": {
+   "folder": "Lightning_Is_Hotter_Than_The_Sun",
+   "files": [
+    "video.mp4",
+    "details.txt",
+    "info.json"
+   ]
+  },
+  "voice": "kokoro:am_michael",
+  "background": "asmr",
+  "visuals": "images",
+  "music": "upbeat_electro",
+  "speed": 1.2,
+  "caption_color": "#FFFFFF",
+  "highlight_color": "#00E5FF",
+  "files": {
+   "loop-720.webm": "shorts/lightning-loop-720.webm",
+   "loop-720.mp4": "shorts/lightning-loop-720.mp4",
+   "loop-540.mp4": "shorts/lightning-loop-540.mp4",
+   "full-720.mp4": "shorts/lightning-full-720.mp4",
+   "poster.avif": "shorts/lightning-poster.avif",
+   "poster.jpg": "shorts/lightning-poster.jpg",
+   "loop-captions.json": "shorts/lightning-loop-captions.json"
+  }
+ },
+ {
+  "picked": "Minecraft parkour with pictures from the web.",
+  "voice_name": "Emma, British English",
+  "loop_window_s": [
+   5.7,
+   15.7
+  ],
+  "id": "aurora",
+  "topic": "Where the northern lights come from",
+  "title": "Where The Northern Lights Come From",
+  "duration_s": 17.2,
+  "output": {
+   "folder": "Where_The_Northern_Lights_Come_From",
+   "files": [
+    "video.mp4",
+    "details.txt",
+    "info.json"
+   ]
+  },
+  "voice": "kokoro:bf_emma",
+  "background": "minecraft",
+  "visuals": "images",
+  "music": "chill_lofi",
+  "speed": 1.2,
+  "caption_color": "#FFFFFF",
+  "highlight_color": "#FF7AD9",
+  "files": {
+   "loop-720.webm": "shorts/aurora-loop-720.webm",
+   "loop-720.mp4": "shorts/aurora-loop-720.mp4",
+   "loop-540.mp4": "shorts/aurora-loop-540.mp4",
+   "full-720.mp4": "shorts/aurora-full-720.mp4",
+   "poster.avif": "shorts/aurora-poster.avif",
+   "poster.jpg": "shorts/aurora-poster.jpg",
+   "loop-captions.json": "shorts/aurora-loop-captions.json"
+  }
+ },
+ {
+  "picked": "Minecraft parkour with captions only, no pictures.",
+  "voice_name": "Fenrir, American English",
+  "loop_window_s": [
+   3.7,
+   11.9
+  ],
+  "id": "sharks",
+  "topic": "Sharks are older than trees",
+  "title": "Sharks Are Older Than Trees",
+  "duration_s": 15.366,
+  "output": {
+   "folder": "Sharks_Are_Older_Than_Trees",
+   "files": [
+    "video.mp4",
+    "details.txt",
+    "info.json"
+   ]
+  },
+  "voice": "kokoro:am_fenrir",
+  "background": "minecraft",
+  "visuals": "none",
+  "music": "epic_battle",
+  "speed": 1.2,
+  "caption_color": "#FFFFFF",
+  "highlight_color": "#FF9F1C",
+  "files": {
+   "loop-720.webm": "shorts/sharks-loop-720.webm",
+   "loop-720.mp4": "shorts/sharks-loop-720.mp4",
+   "loop-540.mp4": "shorts/sharks-loop-540.mp4",
+   "full-720.mp4": "shorts/sharks-full-720.mp4",
+   "poster.avif": "shorts/sharks-poster.avif",
+   "poster.jpg": "shorts/sharks-poster.jpg",
+   "loop-captions.json": "shorts/sharks-loop-captions.json"
+  }
+ },
+ {
+  "picked": "ASMR with pictures from the web.",
+  "voice_name": "Nova, American English",
+  "loop_window_s": [
+   0.1,
+   9.49
+  ],
+  "id": "saturn",
+  "topic": "Saturn could float in water",
+  "title": "Saturn Could Float In Water",
+  "duration_s": 15.441,
+  "output": {
+   "folder": "Saturn_Could_Float_In_Water",
+   "files": [
+    "video.mp4",
+    "details.txt",
+    "info.json"
+   ]
+  },
+  "voice": "kokoro:af_nova",
+  "background": "asmr",
+  "visuals": "images",
+  "music": "chill_lofi",
+  "speed": 1.2,
+  "caption_color": "#8BE9FD",
+  "highlight_color": "#FFE600",
+  "files": {
+   "loop-720.webm": "shorts/saturn-loop-720.webm",
+   "loop-720.mp4": "shorts/saturn-loop-720.mp4",
+   "loop-540.mp4": "shorts/saturn-loop-540.mp4",
+   "full-720.mp4": "shorts/saturn-full-720.mp4",
+   "poster.avif": "shorts/saturn-poster.avif",
+   "poster.jpg": "shorts/saturn-poster.jpg",
+   "loop-captions.json": "shorts/saturn-loop-captions.json"
+  }
+ }
+]
