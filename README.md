@@ -50,8 +50,8 @@ The app is not code-signed yet, so your system shows a warning the first time. T
 
 1. Download the [`.dmg`](https://github.com/backpropghost/Friskshorts/releases/download/v2.1.1/Friskshorts-2.1.1-macos-arm64.dmg) and open it.
 2. Drag **Friskshorts** into **Applications**.
-3. The first time, right-click the app and choose **Open**, then **Open** again.
-   If that does not appear, go to **System Settings → Privacy & Security** and click **Open Anyway**.
+3. Open Friskshorts. macOS says it can't check the app for malicious software; click **Done**.
+4. Go to **System Settings → Privacy & Security**, scroll down and click **Open Anyway**, then confirm. You only do this once.
 
 **Windows 10 / 11**
 
