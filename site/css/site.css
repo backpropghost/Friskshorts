@@ -630,7 +630,7 @@
     display: grid; align-items: center;
   }
   .js .step, .js .step:first-child { grid-area: 1 / 1; min-height: 0; display: block; opacity: 0; pointer-events: none; transition: opacity var(--t-dim) var(--ease-std); }
-  .js .step.is-active, .js .step:focus-within { opacity: 1; pointer-events: auto; }
+  .js .step.is-active { opacity: 1; pointer-events: auto; }
   .js .step-in { padding-block: 0; }
   .js .run-head { padding-bottom: 8svh; }
 
