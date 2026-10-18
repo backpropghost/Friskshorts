@@ -844,3 +844,11 @@ Tonal path down the page: ink (hero, Run) -> ink-lift with column grid (app) -> 
 
 ### 16.4 Reel order
 Aurora (Minecraft), Lightning (ASMR), Sharks (Minecraft), Saturn (ASMR): the backgrounds alternate, so the two pink kinetic-sand clips are never neighbours, and on desktop they sit on the lower "track" of the stagger.
+
+### 16.5 Laptop pass (2026-10-18, owner on a 1512 x 945 MacBook Pro: "is the font too big?")
+Overrides 16.1 where they differ.
+- Max content width 1440 -> **1200 px** (nav, stage and every section).
+- Hero caption `clamp(52px, min(5.1vw, 8.6svh), 80px)`: 1512 x 945 105.8 -> 77.1 px (-27 %); headline 810 -> 590 px wide = 54 -> 39 % of the viewport, 59 -> 49 % of the content width. 1728: 108 -> 80; 1280: 89.6 -> 65.3. Phones unchanged.
+- Frame is centred in columns 8-12 (7-12 below 1440 wide) instead of flush right, so headline and frame read as one block; 213 px of margin right of the frame at 1512 (was 84).
+- Section captions `clamp(36px, 3.2vw, 50px)` = 62-63 % of the hero at every laptop size (was 75-81 %). h2 `clamp(28px, 2.3vw, 38px)`, h3 `clamp(21px, 1.7vw, 26px)`. Phones keep 40 / 30 / 22.
+- Support: the caption heading takes its own row; the pitch and the goal card start on the same line below it.
