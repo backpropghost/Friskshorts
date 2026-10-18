@@ -6,10 +6,10 @@
 
 Turn a topic into a ready-to-upload YouTube Short, on your own computer.
 
-[![Download for macOS](https://img.shields.io/badge/macOS-Apple%20Silicon%20%C2%B7%20486%20MB-111111?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/backpropghost/Friskshorts/releases/download/v2.1.1/Friskshorts-2.1.1-macos-arm64.dmg)
-[![Download for Windows](https://img.shields.io/badge/Windows-10%20%2F%2011%20x64%20%C2%B7%20480%20MB-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/backpropghost/Friskshorts/releases/download/v2.1.1/Friskshorts-2.1.1-windows-x64-setup.exe)
+[![Download for macOS](https://img.shields.io/badge/macOS-Apple%20Silicon%20%C2%B7%20486%20MB-111111?style=for-the-badge&logo=apple&logoColor=white)](https://github.com/backpropghost/Friskshorts/releases/download/v2.1.2/Friskshorts-2.1.2-macos-arm64.dmg)
+[![Download for Windows](https://img.shields.io/badge/Windows-10%20%2F%2011%20x64%20%C2%B7%20481%20MB-0078D4?style=for-the-badge&logo=windows&logoColor=white)](https://github.com/backpropghost/Friskshorts/releases/download/v2.1.2/Friskshorts-2.1.2-windows-x64-setup.exe)
 
-[![Version 2.1.1](https://img.shields.io/badge/version-2.1.1-FFE600?style=flat-square&labelColor=222222)](https://github.com/backpropghost/Friskshorts/releases/tag/v2.1.1)
+[![Version 2.1.2](https://img.shields.io/badge/version-2.1.2-FFE600?style=flat-square&labelColor=222222)](https://github.com/backpropghost/Friskshorts/releases/tag/v2.1.2)
 [![All releases](https://img.shields.io/badge/all-releases-555555?style=flat-square&labelColor=222222)](https://github.com/backpropghost/Friskshorts/releases)
 
 Free to download. Source is not public.
@@ -48,14 +48,14 @@ The app is not code-signed yet, so your system shows a warning the first time. T
 
 **macOS (Apple Silicon)**
 
-1. Download the [`.dmg`](https://github.com/backpropghost/Friskshorts/releases/download/v2.1.1/Friskshorts-2.1.1-macos-arm64.dmg) and open it.
+1. Download the [`.dmg`](https://github.com/backpropghost/Friskshorts/releases/download/v2.1.2/Friskshorts-2.1.2-macos-arm64.dmg) and open it.
 2. Drag **Friskshorts** into **Applications**.
 3. Open Friskshorts. macOS says it can't check the app for malicious software; click **Done**.
 4. Go to **System Settings → Privacy & Security**, scroll down and click **Open Anyway**, then confirm. You only do this once.
 
 **Windows 10 / 11**
 
-1. Download the [setup `.exe`](https://github.com/backpropghost/Friskshorts/releases/download/v2.1.1/Friskshorts-2.1.1-windows-x64-setup.exe) and run it.
+1. Download the [setup `.exe`](https://github.com/backpropghost/Friskshorts/releases/download/v2.1.2/Friskshorts-2.1.2-windows-x64-setup.exe) and run it.
 2. If SmartScreen says "Windows protected your PC", click **More info → Run anyway**.
 3. Installs for your user only. No admin rights needed. Start it from the Start menu.
 
