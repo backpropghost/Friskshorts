@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="no-js" data-sponsors="pending">
+<html lang="en" class="no-js">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -42,6 +42,7 @@
   <nav aria-label="Main">
     <a class="nav-link" href="#how">How it gets made</a>
     <a class="nav-link" href="install/">Install help</a>
+    <a class="nav-sponsor" href="https://github.com/sponsors/backpropghost"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#g-heart"/></svg><span>Sponsor</span></a>
     <a class="btn btn-yellow btn-nav" href="#download" data-nav-dl><span class="lbl-long" data-os-label>Download for Mac</span><span class="lbl-short">Download</span></a>
   </nav>
 </header>
@@ -124,6 +125,7 @@
           </div>
         </div>
         <span class="crop crop-tl"></span><span class="crop crop-tr"></span><span class="crop crop-bl"></span><span class="crop crop-br"></span>
+        <p class="monitor" aria-hidden="true"><span>video.mp4</span><span class="tc" id="tc">00:00:03</span></p>
         <button class="vctl" type="button" id="stage-pause" aria-pressed="false" data-label-pause="Pause video" data-label-play="Play video"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z"/><path class="i-play" d="M5 3l8 5-8 5z"/></svg><span class="sr">Pause video</span></button>
       </div>
 
@@ -244,6 +246,7 @@
       </div>
     </div>
     <figcaption><a href="media/ui/app-style-dark@2x.webp" class="full-link">See the full window</a></figcaption>
+    <span class="crop crop-tl"></span><span class="crop crop-tr"></span><span class="crop crop-bl"></span><span class="crop crop-br"></span>
   </figure>
 </section>
 
@@ -253,21 +256,21 @@
   <ul class="clips" id="clips">
     <li class="clip">
       <div class="clip-media">
-        <picture class="vposter"><source srcset="media/shorts/lightning-poster.avif" type="image/avif"><img src="media/shorts/lightning-poster.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async"></picture>
-        <video class="v-lazy" muted playsinline loop disablepictureinpicture disableremoteplayback preload="none" width="540" height="960" aria-label="Lightning is hotter than the Sun" data-mp4="media/shorts/lightning-loop-540.mp4"></video>
-        <button class="vctl" type="button" aria-pressed="false" data-label-pause="Pause Lightning is hotter than the Sun" data-label-play="Play Lightning is hotter than the Sun"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z"/><path class="i-play" d="M5 3l8 5-8 5z"/></svg><span class="sr">Pause Lightning is hotter than the Sun</span></button>
-      </div>
-      <p class="clip-topic">Lightning is hotter than the Sun</p>
-      <p class="clip-meta">ASMR with pictures from the web. White and cyan captions.</p>
-    </li>
-    <li class="clip">
-      <div class="clip-media">
         <picture class="vposter"><source srcset="media/shorts/aurora-poster.avif" type="image/avif"><img src="media/shorts/aurora-poster.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async"></picture>
         <video class="v-lazy" muted playsinline loop disablepictureinpicture disableremoteplayback preload="none" width="540" height="960" aria-label="Where the northern lights come from" data-mp4="media/shorts/aurora-loop-540.mp4"></video>
         <button class="vctl" type="button" aria-pressed="false" data-label-pause="Pause Where the northern lights come from" data-label-play="Play Where the northern lights come from"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z"/><path class="i-play" d="M5 3l8 5-8 5z"/></svg><span class="sr">Pause Where the northern lights come from</span></button>
       </div>
       <p class="clip-topic">Where the northern lights come from</p>
       <p class="clip-meta">Minecraft parkour with pictures from the web. White and pink captions.</p>
+    </li>
+    <li class="clip">
+      <div class="clip-media">
+        <picture class="vposter"><source srcset="media/shorts/lightning-poster.avif" type="image/avif"><img src="media/shorts/lightning-poster.jpg" width="720" height="1280" alt="" loading="lazy" decoding="async"></picture>
+        <video class="v-lazy" muted playsinline loop disablepictureinpicture disableremoteplayback preload="none" width="540" height="960" aria-label="Lightning is hotter than the Sun" data-mp4="media/shorts/lightning-loop-540.mp4"></video>
+        <button class="vctl" type="button" aria-pressed="false" data-label-pause="Pause Lightning is hotter than the Sun" data-label-play="Play Lightning is hotter than the Sun"><svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M4.5 3h2.2v10H4.5zM9.3 3h2.2v10H9.3z"/><path class="i-play" d="M5 3l8 5-8 5z"/></svg><span class="sr">Pause Lightning is hotter than the Sun</span></button>
+      </div>
+      <p class="clip-topic">Lightning is hotter than the Sun</p>
+      <p class="clip-meta">ASMR with pictures from the web. White and cyan captions.</p>
     </li>
     <li class="clip">
       <div class="clip-media">
@@ -363,7 +366,7 @@
           <svg class="glyph" viewBox="0 0 24 24" aria-hidden="true" data-glyph><use href="#g-apple"/></svg><span data-dl-label>Download for Mac</span>
         </a>
         <p class="get-line" data-dl-line>Version 2.1.1 for Macs with Apple Silicon (M1 or newer). 486&nbsp;MB.</p>
-        <p class="dl-after" data-dl-after hidden>Next: open it and follow the two clicks in <a href="install/">Install help</a>.</p>
+        <p class="dl-after" data-dl-after hidden>Next: open it and follow the two clicks in <a href="install/">Install help</a>. Enjoying it later? <a href="#support">Sponsor Friskshorts</a>.</p>
       </div>
       <div class="get-other" data-dl-other>
         <p data-other-text>Windows 10 or 11, 64-bit.</p>
@@ -375,12 +378,31 @@
       <p class="small">About 1&nbsp;GB of free space. Voice, captions and rendering work offline.</p>
       <p class="small">Want the narration in your own voice? Turn on voice cloning in Settings and the app installs it for you (about 1.4&nbsp;GB).</p>
     </div>
-    <div class="support">
-      <p class="when-sponsors">Friskshorts is free. If it saves you time, you can support it.</p>
-      <p class="when-pending">Friskshorts is free. If it saves you time, a star on GitHub helps.</p>
-      <a class="btn btn-outline when-sponsors" href="https://github.com/sponsors/backpropghost">Support on GitHub Sponsors</a>
-      <a class="btn btn-outline when-pending" href="https://github.com/backpropghost/Friskshorts">Star on GitHub</a>
+  </div>
+</section>
+
+<section class="sup" id="support" aria-labelledby="support-title">
+  <div class="sup-in">
+    <div class="sup-text">
+      <h2 class="caption cap-l" id="support-title" data-burn="in"><span class="w">Support</span> <span class="w">Friskshorts.</span></h2>
+      <p class="sup-lede">Friskshorts is free, with no ads, no account and no tracking. It’s made by one person in their spare time.</p>
+      <p class="sup-body">Sponsoring it on GitHub keeps it going. The first goal is code signing, so the app opens on Mac and Windows without the “are you sure?” step. Apple charges $99 a year for that, and Windows signing costs about the same.</p>
+      <div class="sup-ctas">
+        <a class="btn btn-yellow btn-big" href="https://github.com/sponsors/backpropghost"><svg class="glyph" viewBox="0 0 16 16" aria-hidden="true"><use href="#g-heart"/></svg>Sponsor on GitHub</a>
+        <a class="btn btn-ghost btn-big" href="https://github.com/backpropghost/Friskshorts"><svg class="glyph" viewBox="0 0 16 16" aria-hidden="true"><use href="#g-star"/></svg>Star on GitHub</a>
+      </div>
+      <p class="small sup-note">GitHub handles the payment. A star is free and helps other people find the app.</p>
     </div>
+    <figure class="goal" aria-labelledby="goal-title">
+      <p class="goal-k">First goal</p>
+      <p class="goal-h" id="goal-title">Code signing for Mac and Windows</p>
+      <div class="goal-ruler" aria-hidden="true"><i class="goal-head"></i></div>
+      <ol class="goal-steps">
+        <li><span class="goal-l">Today</span>The first time you open it, your computer asks if you’re sure.</li>
+        <li><span class="goal-l">Signed</span>It opens like any other app. No extra clicks.</li>
+      </ol>
+      <span class="crop crop-tl"></span><span class="crop crop-tr"></span><span class="crop crop-bl"></span><span class="crop crop-br"></span>
+    </figure>
   </div>
 </section>
 </main>
@@ -393,9 +415,10 @@
       <li><a href="install/">Install help</a></li>
       <li><a href="https://github.com/backpropghost/Friskshorts/issues">Report a problem</a></li>
       <li><a href="credits/">Credits</a></li>
-      <li><a class="when-sponsors" href="https://github.com/sponsors/backpropghost">Support the project</a><a class="when-pending" href="https://github.com/backpropghost/Friskshorts">Support the project</a></li>
+      <li><a href="https://github.com/sponsors/backpropghost">Sponsor</a></li>
     </ul>
   </div>
+  <p class="foot-sponsor">Enjoying Friskshorts? <a href="https://github.com/sponsors/backpropghost"><svg viewBox="0 0 16 16" aria-hidden="true"><use href="#g-heart"/></svg>Sponsor it on GitHub</a></p>
   <div class="fine">
     <p>Free to download. Source is not public. Includes ffmpeg and espeak-ng (GPL); their licences ship inside the app.</p>
     <p>The Shorts on this page use pictures and footage by other people. <a href="credits/">Picture and footage credits</a>.</p>
@@ -418,6 +441,8 @@
     </symbol>
     <symbol id="g-apple" viewBox="0 0 24 24"><path fill="currentColor" d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.559-1.701"/></symbol>
     <symbol id="g-win" viewBox="0 0 24 24"><path fill="currentColor" d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></symbol>
+    <symbol id="g-heart" viewBox="0 0 16 16"><path fill="currentColor" d="M8 14.4S1 10 1 5.3C1 3 2.7 1.5 4.6 1.5c1.4 0 2.7.8 3.4 2 .7-1.2 2-2 3.4-2C13.3 1.5 15 3 15 5.3 15 10 8 14.4 8 14.4z"/></symbol>
+    <symbol id="g-star" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" d="m8 1.6 1.95 4.1 4.5.55-3.3 3.1.85 4.45L8 11.6l-3.99 2.2.85-4.45-3.3-3.1 4.5-.55z"/></symbol>
     <symbol id="g-video" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><rect x="2" y="1.75" width="12" height="12.5" rx="2"/><path d="M6.5 5.6v4.8L10.4 8z"/></g></symbol>
     <symbol id="g-text" viewBox="0 0 16 16"><g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 1.75h6.5L13 5.25v9H3z"/><path d="M9.25 1.75v3.75H13M5.5 8.5h5M5.5 11h3.5"/></g></symbol>
     <symbol id="g-folder" viewBox="0 0 16 16"><path fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" d="M1.75 3.75a1 1 0 0 1 1-1h3.4l1.6 1.75h5.5a1 1 0 0 1 1 1v6.75a1 1 0 0 1-1 1H2.75a1 1 0 0 1-1-1z"/></symbol>

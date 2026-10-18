@@ -120,14 +120,22 @@ Spelling follows the README: "colours", "licences". Sentence case everywhere exc
 - Note: `The app isn't code-signed yet, so the first time you open it your computer asks if you're sure.` link `See the two clicks` (to `install/`).
 - Requirements (small): `About 1 GB of free space. Voice, captions and rendering work offline.`
 - Voice cloning (small): `Want the narration in your own voice? Turn on voice cloning in Settings and the app installs it for you (about 1.4 GB).`
-- Support row (separated by a 2px ink rule):
-  - `Friskshorts is free. If it saves you time, you can support it.`
-  - Button (outline): `Support on GitHub Sponsors` -> https://github.com/sponsors/backpropghost
-  - While the Sponsors listing is pending (`<html data-sponsors="pending">`): text becomes `Friskshorts is free. If it saves you time, a star on GitHub helps.` and the button `Star on GitHub` -> https://github.com/backpropghost/Friskshorts. Flip the attribute when Sponsors is live; both variants live in the HTML, CSS shows one.
+- No support row here any more (v3): the dedicated Support section follows directly. After a download click the hidden next-step line also says `Enjoying it later? Sponsor Friskshorts.` (links to `#support`).
+
+### 7b. Support (`#support`, v3)
+- Heading, caption style: `SUPPORT FRISKSHORTS.`
+- Lede: `Friskshorts is free, with no ads, no account and no tracking. It’s made by one person in their spare time.`
+- Body: `Sponsoring it on GitHub keeps it going. The first goal is code signing, so the app opens on Mac and Windows without the “are you sure?” step. Apple charges $99 a year for that, and Windows signing costs about the same.`
+- Primary button (yellow, heart glyph): `Sponsor on GitHub` -> https://github.com/sponsors/backpropghost (redirects to the profile until the Sponsors listing is approved; that is fine). Secondary (ghost, star glyph): `Star on GitHub` -> the repo.
+- Note: `GitHub handles the payment. A star is free and helps other people find the app.`
+- Goal card (cols 9-12, crop marks): `First goal` / `Code signing for Mac and Windows`, a mini ruler with the green playhead at `Today` and a yellow end mark at `Signed`. No progress amount is shown, because none is known.
+- The old `data-sponsors="pending"` swap is gone from every page.
 
 ### Footer
 - Logo tile (24px) + `Friskshorts by backpropghost.`
-- Links: `All releases` (https://github.com/backpropghost/Friskshorts/releases), `Install help`, `Report a problem` (https://github.com/backpropghost/Friskshorts/issues), `Support the project` (Sponsors or star, same toggle).
+- Links: `All releases` (https://github.com/backpropghost/Friskshorts/releases), `Install help`, `Report a problem` (https://github.com/backpropghost/Friskshorts/issues), `Credits`, `Sponsor` (Sponsors URL).
+- Line above the fine print: `Enjoying Friskshorts?` + heart + `Sponsor it on GitHub`.
+- Nav (v3): a small `Sponsor` pill with a tungsten heart sits before the Download button on every width (heart only under 640 px, accessible name stays "Sponsor").
 - Fine print (micro, `--muted`):
   - `Free to download. Source is not public. Includes ffmpeg and espeak-ng (GPL); their licences ship inside the app.`
   - `YouTube is a trademark of Google LLC. Minecraft is a trademark of Mojang Synergies AB. Friskshorts is not affiliated with either.`
@@ -144,7 +152,8 @@ Spelling follows the README: "colours", "licences". Sentence case everywhere exc
   1. `Run the setup file.`
   2. `If SmartScreen says "Windows protected your PC", click More info, then Run anyway.`
   3. `It installs for your user only, no admin rights needed. Start it from the Start menu.`
-- Then: `Requirements`, `Voice cloning (optional)`, `Your data` (same three lines as home #5), and the support row.
+- After each download button: `Enjoying it?` + heart + `Sponsor Friskshorts on GitHub`.
+- Then: `Requirements`, `Voice cloning (optional)`, `Your data` (same three lines as home #5), and `Support Friskshorts` (two sentences, `Sponsor on GitHub` ink button + `Star on GitHub` outline).
 - Back link: `Friskshorts home`.
 
 ### 404
@@ -787,3 +796,51 @@ The general checklist is in `research/RESEARCH.md` section D. These are the Burn
 - [ ] Platform detection matrix (section 11) tested in each case (use UA overrides for Linux/Android).
 - [ ] RESEARCH.md section D checklist: zero fails.
 - [ ] No username, path, key or personal name in any file, image or video.
+
+
+---
+
+## 16. v3 refinements (2026-10-18): proportions, material, support
+
+Owner feedback: "proportions feel a bit off, and the colour themes and background feel a bit too simple", plus "push people to GitHub Sponsors". Everything above still holds; this section overrides where it differs.
+
+### 16.1 Proportions (measured in Chromium, before -> after)
+- **Hero geometry.** The band (frame + ruler + file rows) is centred in the space under the nav with an air gap of `clamp(32px, 5svh, 64px)`; the frame takes the rest, capped at 760 px. The hero text is centred on the frame (not the band), and the band hugs the right edge of the grid so the ruler ends under the nav's Download button.
+  - Text-block centre vs frame centre: 1440x900 58 px -> 0; 1920x1080 86 -> 0; 1280x800 44 -> 0.
+  - Frame top below nav: 1440 16 px (crammed) -> 45 px; frame height 648 -> 620 (72 -> 69 % of the viewport); 1920 680 -> 760 (63 -> 70 %); 1280 576 -> 530.
+  - Headline to frame gap (element boxes) 1440 52 -> 77 px, 1280 49 -> 79 px. Headline outline hangs 0.04em into the margin so the yellow glyphs, not the black stroke, align with the body text.
+- **Grid.** Max content width 1312 -> 1440 px, so 1920 screens no longer read as a small island (side margins 304 -> 240 px).
+- **Type scale: one ratio, 1.333, from 18 px.** At 1440: body 18, lede 21 (half step), step title/h3 32, h2 42.7, caption-L 76, caption-XL 101 (was 18/21/33/46/75/104, close but irregular). Tokens: `--fs-cap-xl clamp(52px, 7vw, 108px)`, `--fs-cap-l clamp(40px, 5.27vw, 88px)`, `--fs-h2 clamp(30px, 2.96vw, 50px)`, `--fs-h3 clamp(22px, 2.22vw, 34px)`.
+- **Line lengths** (desktop): hero sub 52ch, app 59ch, privacy 52ch, notebook 44ch at the h3 size (was ~70ch), support 30-34em. Phones 26-37ch, as phones do.
+- **Section rhythm.** `--sec-pad clamp(96px, 15svh, 176px)`. The notebook is short, so its top padding is 0.7x. Reel clips are staggered 64 px on two "tracks" (desktop). Section heights at 1440: app 1187, reel 1149, privacy 684, notebook 525, get 668, support 738.
+- **Mobile.** Band top padding 8 -> 18 px so the top crop marks are no longer cut by the screen edge; video pause buttons 32 -> 40 px on touch.
+
+### 16.2 Colour: expanded tokens
+| Token | Hex | Job |
+|---|---|---|
+| `--ink-deep` | `#111218` | Footer, the darkest step |
+| `--ink` | `#17181F` | Base canvas (unchanged) |
+| `--ink-lift` | `#1B1C24` | "Editor canvas" behind the app window |
+| `--char` | `#201E1C` | Warm charcoal: privacy fades into it, notebook sits on it |
+| `--char-deep` | `#1A1816` | Support section |
+| `--line-2` | `#3A3C47` | Ghost button edge, nav Sponsor pill |
+| `--tungsten` | `#FFB547` | Warm accent: brand yellow pulled toward 3200 K light. Spotlight spill, the sponsor heart. Never body text. |
+| `--phosphor` | `#5CE6B8` | Cool accent: highlight green pulled toward a monitor's green-cyan. Only as `--guide` (15 % alpha) for guides and the column grid. |
+| (light page) `#B4530B` | | Sponsor heart on the light install page |
+
+Contrast (WCAG): text on char 14.4:1, muted on char 6.8:1, muted on ink-lift 6.9:1, muted on ink-deep 7.6:1, notebook/support body `#B9B3AA` 8.0:1 on char and 8.5:1 on char-deep, the light-page heart `#B4530B` 4.65:1, tungsten on ink 10.1:1, faint stays decorative only. Green keeps its single meaning ("now"): the Run playhead, the monitor's live dot, the `Today` mark on the goal ruler.
+
+Tonal path down the page: ink (hero, Run) -> ink-lift with column grid (app) -> ink with a timeline ruler edge (reel) -> ink fading to warm charcoal (privacy) -> charcoal (notebook) -> **yellow (Get it, the one full-bleed colour moment)** -> deep warm charcoal (support) -> ink-deep (footer). Full-bleed tones use `border-image: <gradient> fill 0 / 0 / 0 100vw` so sections keep their width-limited boxes.
+
+### 16.3 Background material (all CSS, no images, about 4 KB gzip in total)
+- **Film grain**: a 160 px SVG `feTurbulence` tile in a data URI on a fixed `body::after`, 12 % alpha, jumping between 4 offsets every 125 ms (transform only, `steps(1)`). Off for reduced motion. On the light install page it is inverted at 5 %.
+- **Monitor falloff**: one wide radial lift (`#1C1D26`) behind the top of the page where the frame sits; the edges stay ink.
+- **Spotlight**: the light a lit screen throws around itself, behind the frame only. Its tint follows the frame state as a cut: warm white in the finished Short, cool white for topic/script, pale green while the voice plays, tungsten for scene/captions. Low alpha (8.5 % at the centre) so it reads as light, not a blob. Justification against slop rule "no glows": it is tied to a real object (the 9:16 frame) and changes with the Run.
+- **Safe-area guides**: dashed hairlines at the frame's top and bottom edge, running across the page and fading out, like guides in an editor. The hero text block sits between them. Desktop only.
+- **Monitor strip**: above the finished Short, `video.mp4` on the left and a live timecode on the right (mm:ss:frames, 30 fps, from `requestVideoFrameCallback`, `timeupdate` fallback), with the green live dot. Hidden while the Short is being built.
+- **Column grid**: the app section draws its own 12 columns as phosphor hairlines, masked at top and bottom.
+- **Timeline ruler edges**: the reel and privacy sections start with a full-bleed tick ruler (major tick every 96 px, minor every 12 px).
+- **Crop marks as structure**: also around the app window (desktop) and the support goal card.
+
+### 16.4 Reel order
+Aurora (Minecraft), Lightning (ASMR), Sharks (Minecraft), Saturn (ASMR): the backgrounds alternate, so the two pink kinetic-sand clips are never neighbours, and on desktop they sit on the lower "track" of the stagger.

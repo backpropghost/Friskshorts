@@ -312,6 +312,17 @@ function initStage() {
     }
   };
   vFinal.addEventListener("playing", () => vFinal.classList.add("is-ready"), { once: true });
+  // Monitor timecode: the loop starts 0.1 s into the real Short; 30 fps frames.
+  const tc = $("#tc");
+  const pad = (n) => String(n).padStart(2, "0");
+  const showTC = (t) => { const f = Math.floor((t % 1) * 30); tc.textContent = `${pad(Math.floor(t / 60))}:${pad(Math.floor(t % 60))}:${pad(f)}`; };
+  if (tc) {
+    const OFF = 0.1;
+    if ("requestVideoFrameCallback" in HTMLVideoElement.prototype) {
+      const onFrame = (_, m) => { showTC(OFF + m.mediaTime); vFinal.requestVideoFrameCallback(onFrame); };
+      vFinal.requestVideoFrameCallback(onFrame);
+    } else vFinal.addEventListener("timeupdate", () => showTC(OFF + vFinal.currentTime));
+  }
   const loadHero = () => {
     vFinal.src = srcFor(vFinal, matchMedia("(max-width: 639px)").matches);
     vFinal.preload = "auto";
